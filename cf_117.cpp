@@ -6,6 +6,35 @@ typedef long long int ll;
 #define forll(i, n) for (ll i = 0; i < ll(n); i++)
 #define MOD 1000000007
 
+void neg();
+void No();
+void NO();
+void YES();
+void Yes();
+
+void solve()
+{
+
+    ll x;
+    cin >> x;
+    cout << x << " " << 0 << endl;
+
+    return;
+}
+
+int main()
+{
+
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    int t = 1;
+    cin >> t;
+    while (t--)
+        solve();
+    return 0;
+}
+
 void neg()
 {
     cout << -1 << endl;
@@ -25,33 +54,4 @@ void YES()
 void Yes()
 {
     cout << "Yes" << endl;
-}
-
-void solve()
-{
-
-    ll n, k;
-    cin >> n >> k;
-    if (k == 0)
-    {
-        cout << n << endl;
-        return;
-    }
-    if (k == 1)
-    {
-        cout << 0 << endl;
-        return;
-    }
-    cout << n % k << endl;
-    return;
-}
-
-int main()
-{
-
-    int t = 1;
-    cin >> t;
-    while (t--)
-        solve();
-    return 0;
 }

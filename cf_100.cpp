@@ -30,19 +30,41 @@ void Yes()
 void solve()
 {
 
-    ll n, k;
-    cin >> n >> k;
-    if (k == 0)
+    string s;
+    cin >> s;
+    int a[26] = {0};
+    for (int i = 0; i < s.size(); i++)
     {
-        cout << n << endl;
-        return;
+        a[s[i] - 'a']++;
     }
-    if (k == 1)
+    int evens = 0, odds = 0;
+    int twos = 0;
+
+    for (int i = 0; i < 26; i++)
     {
-        cout << 0 << endl;
-        return;
+        if (a[i] > 1)
+        {
+            twos += (a[i]) / 2;
+            a[i] = a[i] % 2;
+        }
     }
-    cout << n % k << endl;
+    for (int i = 0; i < 26; i++)
+    {
+        if (a[i] > 0)
+        {
+            if (twos > 0)
+            {
+                twos--;
+            }
+            else
+            {
+                NO();
+                return;
+            }
+        }
+    }
+    YES();
+
     return;
 }
 

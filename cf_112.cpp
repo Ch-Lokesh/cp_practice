@@ -32,17 +32,27 @@ void solve()
 
     ll n, k;
     cin >> n >> k;
-    if (k == 0)
+    while (k % 2 == 0)
     {
-        cout << n << endl;
-        return;
+        k = k / 2;
     }
-    if (k == 1)
+    int flag = 0;
+
+    fori(i, n)
     {
-        cout << 0 << endl;
-        return;
+        ll temp;
+        cin >> temp;
+        if (flag == 0 && temp % k != 0)
+        {
+            flag = 1;
+        }
     }
-    cout << n % k << endl;
+    if (flag == 1)
+    {
+        NO();
+    }
+    else
+        YES();
     return;
 }
 

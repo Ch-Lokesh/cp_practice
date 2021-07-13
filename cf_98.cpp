@@ -30,19 +30,23 @@ void Yes()
 void solve()
 {
 
-    ll n, k;
-    cin >> n >> k;
-    if (k == 0)
+    ll a[10];
+    for (int i = 0; i < 10; i++)
+        cin >> a[i];
+    ll k;
+    cin >> k;
+
+    for (int i = 9; i >= 0; i--)
     {
-        cout << n << endl;
-        return;
+
+        if (a[i] > k)
+        {
+            cout << i + 1 << endl;
+            return;
+        }
+        k = k - a[i];
     }
-    if (k == 1)
-    {
-        cout << 0 << endl;
-        return;
-    }
-    cout << n % k << endl;
+
     return;
 }
 

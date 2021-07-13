@@ -27,22 +27,32 @@ void Yes()
     cout << "Yes" << endl;
 }
 
+bool isPrime(ll n)
+{
+    if (n == 2)
+        return true;
+    for (ll i = 2; i <= (ll)(sqrt(n)); i++)
+    {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
+
 void solve()
 {
 
-    ll n, k;
-    cin >> n >> k;
-    if (k == 0)
+    ll l, r;
+    cin >> l >> r;
+    ll i = r + 1;
+    while (1)
     {
-        cout << n << endl;
-        return;
+        if (isPrime(i))
+            break;
+        i++;
     }
-    if (k == 1)
-    {
-        cout << 0 << endl;
-        return;
-    }
-    cout << n % k << endl;
+    cout << i << endl;
+
     return;
 }
 

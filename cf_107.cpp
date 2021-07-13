@@ -30,19 +30,15 @@ void Yes()
 void solve()
 {
 
-    ll n, k;
-    cin >> n >> k;
-    if (k == 0)
+    int x, y, z;
+    cin >> x >> y >> z;
+    if (x == y + z || y == x + z || z == x + y)
     {
-        cout << n << endl;
-        return;
+        YES();
     }
-    if (k == 1)
-    {
-        cout << 0 << endl;
-        return;
-    }
-    cout << n % k << endl;
+    else
+        NO();
+
     return;
 }
 

@@ -30,19 +30,21 @@ void Yes()
 void solve()
 {
 
-    ll n, k;
-    cin >> n >> k;
-    if (k == 0)
+    int n;
+
+    cin >> n;
+    int evens = 0, odds = 0;
+    fori(i, n)
     {
-        cout << n << endl;
-        return;
+        int temp;
+        cin >> temp;
+        if (temp % 2)
+            odds++;
+        else
+            evens++;
     }
-    if (k == 1)
-    {
-        cout << 0 << endl;
-        return;
-    }
-    cout << n % k << endl;
+    cout << min(evens, odds) << endl;
+
     return;
 }
 

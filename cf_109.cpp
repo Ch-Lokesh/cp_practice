@@ -30,19 +30,22 @@ void Yes()
 void solve()
 {
 
-    ll n, k;
-    cin >> n >> k;
-    if (k == 0)
+    int n;
+    cin >> n;
+    ll sum = 0;
+    fori(i, n)
     {
-        cout << n << endl;
-        return;
+        ll temp;
+        cin >> temp;
+        sum += temp;
     }
-    if (k == 1)
+    if (sum % 2)
     {
-        cout << 0 << endl;
-        return;
+        cout << 2 << endl;
     }
-    cout << n % k << endl;
+    else
+        cout << 1 << endl;
+
     return;
 }
 

@@ -1,0 +1,50 @@
+<html>
+    <head>
+
+    </head>
+
+    <script>
+
+        document.getElementById('metadata-form')
+            .addEventListener('submit', check);
+
+        function check(e) {
+            e.preventDefault();
+            // and now anything else you want to do.
+            
+            const url = "https://lokesh-pos.herokuapp.com/api/v1/pos/save-metadata";
+            const data = {
+                'firstName': document.getElementById('firstName').value,
+                'lastName': document.getElementById('lastName').value,
+                'cardNumber': document.getElementById('cardNumber')
+            };
+
+            const other_params = {
+                headers: { "content-type": "application/json; charset=UTF-8" },
+                body: data,
+                method: "POST",
+                mode: "cors"
+            };
+
+            fetch(url, other_params)
+                .then(function (response) {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw new Error("Could not reach the API: " + response.statusText);
+                    }
+                });
+            return true;
+        }
+    </script>
+    <body>
+        
+        <form id = "metadata-form"  method="post">
+            <input type="text" id="firstName" name="firstName">
+            <input type="text" id="lastName" name="lastName">
+            <input type="text" id="cardNumber" name="cardNumber">
+            <input type="submit">
+        </form>
+        <p id="message">this is mesage</p>
+    </body>
+</html>
